@@ -223,6 +223,10 @@ section {
     margin-bottom: 20px;
     display: block;
 }
+.skill-card:hover {
+    transform: translateY(-5px); /* Move the card up slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow */
+}
 
 @media (max-width: 1200px) {
     .skill-card {
@@ -300,24 +304,23 @@ section {
 }
 
 /* resume */
-
 .resume-section {
     padding: 50px 0;
     text-align: center;
-    position: relative; 
-    min-height: 100vh; 
+    position: relative;
+    min-height: 100vh; /* Ensure section covers full viewport height */
 }
 
 .resume-section h2 {
     font-size: 2em;
     margin-bottom: 30px;
-    color: #FDF6F6;
+    color: #fdf6f6;
 }
 
 .resume-preview,
 .resume-component {
     margin-bottom: 40px;
-    color: #FDF6F6;
+    color: #fdf6f6;
 }
 
 .resume-preview {
@@ -327,19 +330,19 @@ section {
 .resume-component {
     background-color: #001f3f;
     padding: 2rem;
-    margin: 0.5rem 25rem;
+    margin: 2rem 1rem; /* Adjust margin for smaller screens */
     border-radius: 2rem;
 }
 
 .resume-component h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #FDF6F6;
+    color: #fdf6f6;
 }
 
 .resume-component p {
     font-size: 1em;
-    color: #FDF6F6;
+    color: #fdf6f6;
     margin-bottom: 20px;
 }
 
@@ -347,7 +350,7 @@ section {
 .resume-component a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #C5001A;
+    background-color: #c5001a;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -356,7 +359,7 @@ section {
 
 .resume-download-link:hover,
 .resume-component a:hover {
-    background-color: #A70016;
+    background-color: #a70016;
 }
 
 .resume-footer {
@@ -391,7 +394,7 @@ section {
 }
 
 .resume-footer ul li a:hover {
-    color: #C5001A;
+    color: #c5001a;
 }
 
 .resume-footer p {
@@ -402,17 +405,17 @@ section {
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .resume-component {
-        margin: 0.5rem 15rem; 
+        margin: 1rem;
     }
 }
 
 @media (max-width: 992px) {
     .resume-component {
-        margin: 0.5rem 10rem;
+        margin: 0.5rem;
     }
 
     .resume-section h2 {
-        font-size: 1.8em; 
+        font-size: 1.8em;
     }
 
     .resume-component h3 {
@@ -426,7 +429,8 @@ section {
 
 @media (max-width: 768px) {
     .resume-component {
-        margin: 0.5rem 5rem;
+        padding: 1rem;
+        margin: 0.5rem;
     }
 
     .resume-section h2 {
@@ -453,7 +457,8 @@ section {
 
 @media (max-width: 576px) {
     .resume-component {
-        margin: 0.5rem 2rem;
+        padding: 0.8rem;
+        margin: 0.5rem;
     }
 
     .resume-section h2 {
@@ -474,6 +479,6 @@ section {
     }
 
     .resume-footer p {
-        font-size: 0.6em; /* Further reduce footer text size */
+        font-size: 0.6em;
     }
 }
