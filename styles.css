@@ -1,24 +1,33 @@
+:root {
+    --main-bg: #1a2632; /* Midnight black background */
+    --sec-col: #de5655; /* Orange secondary color */
+    --main-text: #faeaec; /* Pearl text color */
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: var(--main-text);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 /* sections */
 
 section {
-    height: max-content;
+    height: 100vh;
+    background-color: var(--main-bg);
 }
 
-.deep-blue{
-    background-color: #002C54;
+@media(max-width: 992px) {
+    section {
+        height: auto;
+    }
 }
 
-.pale-pink{
-    background-color: #FDF6F6;
-}
-
-.red-span{
-    color: #C5001A;
+.highlight{
+    color:  var(--sec-col);
 }
 
 @media (min-width: 1200px) {
@@ -27,21 +36,35 @@ section {
     }
 }
 
-/* Hero Section */
-
-.hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    color: white;
-    text-align: center;
-    padding: 20px;
+nav {
+    background-color: var(--main-bg);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+nav ul{
+    margin: 0;
+    list-style: none;
+    padding: 2rem 0 1rem 0;
+}
+nav ul li {
+    padding: 1rem;
+    border: 1px solid var(--sec-col);
+    border-radius: 35px;
+    transition: all ease-in-out 0.3s;
 }
 
-.hero-content {
-    max-width: max-content;
+nav ul li:hover {
+    background-color: var(--sec-col);
+}
+
+nav ul li:hover a{
+    color: var(--main-bg);
+}
+
+nav ul li a{
+    color: var(--sec-col);
+    text-decoration: none;
 }
 
 .profile-photo {
@@ -51,66 +74,17 @@ section {
     border: 5px solid white; 
     margin-bottom: 20px;
 }
-
-.hero-name {
-    font-size: 3em; 
-    margin: 0;
-    margin-top: 1rem;
-}
-
-.hero-name span{
-    color: #C5001A;
-}
-
-.hero-tagline {
-    font-size: 1.5em; 
-    margin-top: 10px;
-}
-
-
 /* About Section styles */
-.custom-about-section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    overflow: hidden;
-    padding: 20px;
-}
-
-.custom-about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    z-index: 1;
-}
 
 .custom-about-content {
     background-color: rgba(255, 255, 255, 0.1); 
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.custom-about-content h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
 }
 
 .custom-about-content p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    text-align: justify;
+    text-align: justify; 
 }
 
 @media (min-width: 576px) {
-    .custom-about-content h2 {
-        font-size: 2em;
-    }
 
     .custom-about-content p {
         font-size: 1.1em;
@@ -118,17 +92,9 @@ section {
 }
 
 @media (min-width: 768px) {
-    .custom-about-container {
-        flex-direction: row;
-        text-align: left;
-    }
 
     .custom-about-content {
         text-align: left;
-    }
-
-    .custom-about-content h2 {
-        font-size: 2.5em;
     }
 
     .custom-about-content p {
@@ -137,13 +103,6 @@ section {
 }
 
 @media (min-width: 992px) {
-    .custom-about-container {
-        max-width: 1000px;
-    }
-
-    .custom-about-content h2 {
-        font-size: 3em;
-    }
 
     .custom-about-content p {
         font-size: 1.3em;
@@ -151,13 +110,6 @@ section {
 }
 
 @media (min-width: 1200px) {
-    .custom-about-container {
-        max-width: 1200px;
-    }
-
-    .custom-about-content h2 {
-        font-size: 3.5em;
-    }
 
     .custom-about-content p {
         font-size: 1.4em;
@@ -174,18 +126,8 @@ section {
     flex-wrap: wrap; 
 }
 
-.skills-section h2 {
-    color: #fff; 
-    font-size: 4em; 
-    margin-top: 50px;
-    margin-bottom: 25px; 
-    text-align: center; 
-    width: 100%;
-}
-
 .skill-card {
-    background-color: #001f3f;
-    border-radius: 10px;
+    background-color: var(--sec-col);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
@@ -196,12 +138,6 @@ section {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-}
-
-.skill-card img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
 }
 
 .skill-card h3 {
@@ -224,8 +160,8 @@ section {
     display: block;
 }
 .skill-card:hover {
-    transform: translateY(-5px); /* Move the card up slightly */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow */
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 1200px) {
@@ -257,101 +193,53 @@ section {
     text-align: center;
 }
 
-.projects-section h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-}
-
 .project-card {
-    background-color: #f9f9f9;
+    background-color: var(--main-text);
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin: 0 30px 30px 30px;
+    transition: all 0.3s ease;
 }
-.project-details {
-    padding: 20px;
-}
-
-.project-details h3 {
-    color: #333;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.project-details p {
-    color: #666;
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 20px; 
-}
-
-.project-links {
-    display: flex;
-    justify-content: center;
-}
-
-.project-link {
-    color: #333;
-    font-size: 1.5em;
-    margin: 0 5px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.project-link:hover {
-    color: #C5001A;
+.project-card:hover {
+    background-color: var(--sec-col);
+    color: var(--main-text);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* resume */
-.resume-section {
-    padding: 50px 0;
-    text-align: center;
-    position: relative;
-    min-height: 100vh; /* Ensure section covers full viewport height */
-}
 
-.resume-section h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    color: #fdf6f6;
-}
-
-.resume-preview,
-.resume-component {
-    margin-bottom: 40px;
-    color: #fdf6f6;
-}
-
-.resume-preview {
-    margin-bottom: -0.1rem;
+#resume {
+    height: auto;
 }
 
 .resume-component {
-    background-color: #001f3f;
-    padding: 2rem;
-    margin: 2rem 1rem; /* Adjust margin for smaller screens */
-    border-radius: 2rem;
+    background-color: var(--main-bg);
+    border: 1px solid var(--sec-col);
+    padding: 1rem;
+    margin: 2rem 1rem;
 }
 
 .resume-component h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #fdf6f6;
+    color: var(--main-text);
 }
 
 .resume-component p {
     font-size: 1em;
-    color: #fdf6f6;
+    color: var(--main-text);
     margin-bottom: 20px;
 }
 
 .resume-download-link,
 .resume-component a {
+    text-decoration: none;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #c5001a;
-    color: #fff;
+    background-color: var(--sec-col);
+    color: var(--main-text);
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -360,46 +248,6 @@ section {
 .resume-download-link:hover,
 .resume-component a:hover {
     background-color: #a70016;
-}
-
-.resume-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #f9f9f9;
-    padding: 20px 0;
-    text-align: center;
-    border-top: 1px solid #ccc;
-}
-
-.resume-footer ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-.resume-footer ul li {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.resume-footer ul li i {
-    margin-right: 10px;
-}
-
-.resume-footer ul li a {
-    color: #333;
-    text-decoration: none;
-}
-
-.resume-footer ul li a:hover {
-    color: #c5001a;
-}
-
-.resume-footer p {
-    font-size: 0.8em;
-    color: #666;
 }
 
 /* Responsive Styles */
@@ -412,10 +260,7 @@ section {
 @media (max-width: 992px) {
     .resume-component {
         margin: 0.5rem;
-    }
-
-    .resume-section h2 {
-        font-size: 1.8em;
+        width: 100%;
     }
 
     .resume-component h3 {
@@ -425,16 +270,15 @@ section {
     .resume-component p {
         font-size: 0.9em;
     }
+    #hero{
+        height: 100vh !important;
+    }
 }
 
 @media (max-width: 768px) {
     .resume-component {
         padding: 1rem;
         margin: 0.5rem;
-    }
-
-    .resume-section h2 {
-        font-size: 1.6em;
     }
 
     .resume-component h3 {
@@ -449,10 +293,6 @@ section {
     .resume-component a {
         padding: 8px 16px;
     }
-
-    .resume-footer p {
-        font-size: 0.7em;
-    }
 }
 
 @media (max-width: 576px) {
@@ -460,11 +300,6 @@ section {
         padding: 0.8rem;
         margin: 0.5rem;
     }
-
-    .resume-section h2 {
-        font-size: 1.4em;
-    }
-
     .resume-component h3 {
         font-size: 1em;
     }
@@ -477,8 +312,13 @@ section {
     .resume-component a {
         padding: 6px 12px;
     }
+}
 
-    .resume-footer p {
-        font-size: 0.6em;
-    }
+section h2 {
+    color: #fff; 
+    font-size: 4em; 
+    margin-top: 50px;
+    margin-bottom: 25px; 
+    text-align: center; 
+    width: 100%;
 }
